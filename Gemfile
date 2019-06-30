@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'simple_form', '~> 4.1'
 gem 'haml', '~> 5.1', '>= 5.1.1'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 
 
 group :development, :test do
