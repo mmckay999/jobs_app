@@ -5,11 +5,12 @@
 	= csrf_meta_tags
 	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 	= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+	= javascript_include_tag 'bootstrap' if Rails.env.development?
 
 %body
 	%nav.navbar.navbar-default
 		.container
-			.navbar-brand Mike's Job
+			.navbar-brand Mike's Jobs
 			%ul.nav.navbar-nav
 				%li= link_to "All Jobs", root_path
 				- Category.all.each do |category|
