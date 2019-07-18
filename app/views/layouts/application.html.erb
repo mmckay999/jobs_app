@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html></html>
+<head>
+  <title>Mike's Job Board</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag[href ="stylesheets/bootstrap.min.css"] %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-brand">Mike's Jobs</div>
+      <ul class="nav navbar-nav">
+        <li class="nav navbar-nav">
+          <%= link_to "All Jobs", root_path %>
+        </li>
+        <% Category.all.each do |category| %>
+          <li class="nav navbar-nav">
+            <%= link_to category.name, jobs_path(category: category.name) %>
+          </li>
+        <% end %>
+      </ul>
+      <%= link_to "New Job", new_job_path, class: "navbar-text navbar-right navbar-link" %>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+      <%= yield %>
+    </div>
+  </div>
+</body>
